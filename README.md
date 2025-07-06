@@ -31,6 +31,15 @@ This project, "Intelligent Complaint Analysis for Financial Services," leverages
     ```
      jupyter notebook notebooks/eda_analysis.ipynb
     ```
+6. **Enviroment variables**
+    ```
+    CHROMADB_HOST=
+    CHROMADB_PORT=
+    ```
+7. **To run embedding data and storing it to chromadb**
+    ```
+    python -m src.ingest
+    ```
 
 ## Project Structure
 

@@ -4,3 +4,4 @@ dvcstorage-auth.json
 dvcstorage.json
 __pycache__
 chroma-data
+.env

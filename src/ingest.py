@@ -5,7 +5,9 @@ from scripts.chroma import ChromaDb
 from chromadb import Documents, Collection
 import pandas as pd
 import uuid
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 CHUNK_SIZE=100
 CHUNK_OVERLAY=100
 DATA_FOLDER = 'data'
@@ -13,6 +15,8 @@ COLLECTION_NAME = 'complaints'
 META_COLS = ['Company','Issue','Product','Submitted via', 'Date sent to company', 'Complaint ID', 'Date received']
 TARGET_COL = 'cleaned_narrative'
 SAVE_CHUNK = 'narrative_chunks'
+HOST=os.getenv('CHROMADB_HOST')
+PORT=os.getenv('CHROMADB_PORT')
 class Ingest:
     """
     Ingest class for processing and storing complaint data embeddings.
@@ -30,7 +34,7 @@ class Ingest:
             Retrieves and prints the current Chroma collection for inspection.
     """
     def __init__(self):
-        self.chroma = ChromaDb('localhost', 8000);
+        self.chroma = ChromaDb(HOST, PORT);
         self.data = pd.read_csv(f'{DATA_FOLDER}/filtered_complaints.csv')
         print(f'Data loaded from {DATA_FOLDER}/filtered_complaints.csv')
 
