@@ -1,0 +1,6 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = gdrive://1VK0rZ03LPKqVPOAyF8Cyl75jU6eVPznY
+    gdrive_use_service_account = true
+    gdrive_service_account_user_email = dvc-197@dvcstorage-463814.iam.gserviceaccount.com
