@@ -1,2 +1,6 @@
 .venv/
-data/
+data
+dvcstorage-auth.json
+dvcstorage.json
+__pycache__
+chroma-data

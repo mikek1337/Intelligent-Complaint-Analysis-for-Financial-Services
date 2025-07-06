@@ -2,6 +2,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 def plot_boxplot(df:pd.DataFrame, cols:list[str]):
+    """
+    Plots boxplots for the specified columns in a pandas DataFrame.
+
+    Parameters:
+        df (pd.DataFrame): The DataFrame containing the data to plot.
+        cols (list[str]): List of column names to plot. If empty, all columns are considered.
+
+    Notes:
+        - Only numeric columns are plotted.
+        - Each boxplot is displayed in a separate figure.
+    """
     if len(cols) == 0:
         cols = df.columns
     for col in cols:
@@ -12,6 +23,21 @@ def plot_boxplot(df:pd.DataFrame, cols:list[str]):
             plt.show()
 
 def plot_histogram(df:pd.DataFrame,cols:list[str]):
+    """
+    Plots histograms for numeric columns and count plots for categorical columns in a DataFrame.
+
+    Parameters:
+        df (pd.DataFrame): The input DataFrame containing the data to plot.
+        cols (list[str]): List of column names to plot. If empty, all columns in the DataFrame are considered.
+
+    Behavior:
+        - For each column in `cols`:
+            - If the column is numeric, plots a histogram with a KDE curve.
+            - If the column is categorical, plots a count plot showing the frequency of each category.
+        - Each plot is displayed immediately after creation.
+        - Handles missing values in numeric columns by default (can be modified with dropna()).
+        - Customizes plot titles, axis labels, and tick parameters for readability.
+    """
     i = 0
     if len(cols) == 0:
         cols = df.columns
