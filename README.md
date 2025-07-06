@@ -13,7 +13,7 @@ This project, "Intelligent Complaint Analysis for Financial Services," leverages
 
 2. **Create and Activate a Virtual Environment**
     ```
-    python3 -m venv venv
+    python3 -m venv .venv
     source venv/bin/activate
     ```
 
