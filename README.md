@@ -36,9 +36,9 @@ This project, "Intelligent Complaint Analysis for Financial Services," leverages
     CHROMADB_HOST=
     CHROMADB_PORT=
     ```
-7. **To run embedding data and storing it to chromadb**
+7. **To run Chatbot**
     ```
-    python -m src.ingest
+    python -m src.main.app
     ```
 
 ## Project Structure
