@@ -29,6 +29,12 @@ This module (`ingest.py`) provides a pipeline for processing, chunking, and stor
   - `process_embedding`: Processes the complaint narratives, chunks the text, and saves the results to the Chroma collection.
   - `save`: Saves the generated text chunks and associated metadata for each complaint into the Chroma collection.
   - `get_embeddings`: Retrieves and prints the current Chroma collection for inspection.
+  **Generator**
+  - `__init__`: Initializes prompt_template.
+  - `llm_response`: handle llm connection
+  **Retrival**
+  - `__init__`: Initializes the Chroma database connection and loads the complaint data.
+  - `retrive_documents`: Responsable for document retrival from Chromadb
 
 ## Usage
 
